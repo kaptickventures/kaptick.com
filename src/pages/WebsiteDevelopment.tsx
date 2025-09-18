@@ -262,6 +262,37 @@ const WebDevelopmentLanding = () => {
                 </form>
               </CardContent>
             </Card>
+            {/* Brands That Trust Us Section */}
+            <div className="mt-8 mb--12"> {/* Further reduced margin below */}
+              <div className="text-center mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">Brands That Trust Us</h3>
+                <p className="text-lg text-gray-300 max-w-xl mx-auto">Join the growing list of businesses who rely on Kaptick for their digital success.</p>
+              </div>
+              {/* Logo Carousel with left-to-right animation */}
+              <div className="overflow-hidden w-full relative" style={{height: '5.5rem'}}>
+                <div
+                  className="flex gap-4 items-center"
+                  style={{
+                    width: 'max-content',
+                    animation: 'slide-logos-ltr 24s linear infinite',
+                  }}
+                >
+                  {/* Duplicate the logo set for seamless infinite loop */}
+                  {Array(2).fill([1,2,3,4,5]).flat().map((i, idx) => (
+                    <div key={idx} className="flex-shrink-0 w-32 h-20 bg-white/10 rounded-lg flex items-center justify-center border border-white/10 shadow-md">
+                      <span className="text-gray-400 text-lg font-semibold">Logo {i}</span>
+                    </div>
+                  ))}
+                </div>
+                {/* Inline keyframes for seamless infinite left-to-right animation */}
+                <style>{`
+                  @keyframes slide-logos-ltr {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0); }
+                  }
+                `}</style>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -284,7 +315,7 @@ const WebDevelopmentLanding = () => {
       </section>
 
   {/* FAQ Section */}
-  <section className="container pt-4 md:pt-8 pb-16 md:pb-24">
+  <section className="container pt-2 md:pt-4 pb-16 md:pb-24">  {/* Reduced top padding for FAQ */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
