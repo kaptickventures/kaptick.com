@@ -174,7 +174,8 @@ const WebDevelopmentLanding = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Frustrated with freelancers who disappear? Worried about getting a website that actually works? <span className="text-green-400 font-semibold">Get a stunning website preview in 48 hours and approve it before you pay a rupee.</span> Our zero-risk launch takes the guesswork out of going online.
+            <span className="italic text-red-500 font-semibold">Kaptick</span>
+            <span className="text-green-400 font-semibold"> gives you a stunning website preview in 48 hours and approve it before you pay a rupee.</span>
           </motion.p>
           {/* Contact Form moved to hero section */}
           <div className="mt-8 max-w-2xl mx-auto">
