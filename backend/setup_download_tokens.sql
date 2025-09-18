@@ -1,0 +1,17 @@
+-- SQL script to create download_tokens table
+-- Run this in your MySQL database
+
+CREATE TABLE IF NOT EXISTS download_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    token VARCHAR(64) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    lead_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    expires_at TIMESTAMP NOT NULL,
+    used_at TIMESTAMP NULL,
+    INDEX idx_token (token),
+    INDEX idx_expires (expires_at)
+);
+
+-- Clean up expired tokens (optional - can be run periodically)
+-- DELETE FROM download_tokens WHERE expires_at < DATE_SUB(NOW(), INTERVAL 7 DAY);
